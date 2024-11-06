@@ -1,0 +1,371 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi:wght@400;500;700&display=swap');
+
+/**  Eric Meyer CSS Reset code
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*/
+
+body {
+    margin: 20px;
+    padding: 0px;
+    font-family: 'Kaisei HarunoUmi', serif;
+    line-height: 1.5;
+    background-color: #D0312D;
+}
+
+.logo {
+    width: 900px; /* Default size for large screens */
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    .logo {
+        width: 600px; /* Medium size for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 250px; /* Smaller size for mobile screens */
+    }
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .navbar nav ul {
+        display: none; /* Hide menu on small screens */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar nav ul.active {
+        display: flex; /* Show menu when active */
+    }
+}
+
+nav ul {
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: #000;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.menu-icon {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .menu-icon div {
+        width: 30px;
+        height: 4px;
+        background-color: black;
+        margin: 5px;
+        transition: 0.4s;
+    }
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card h3 {
+    text-align: center;
+}
+
+.members {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px; 
+}
+
+@media (max-width: 1200px) {
+    .members {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .members {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar nav ul.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-icon div {
+        width: 30px;
+        height: 4px;
+        background-color: black;
+        margin: 5px;
+    }
+}
+
+.card {
+    background-color: #fff;
+    width: 90%;
+    padding: 22px 30px 22px;
+    border-radius: 5px;
+    line-height: 5px;
+    line-height: 1.5;
+    margin: 22px auto 22px;
+    box-sizing: border-box;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* Adjust card width on smaller screens */
+    }
+
+    .card img {
+        width: 90%; /* Ensure image fits within card */
+    }
+}
+
+#ch-1 {
+    display: none;
+}
+
+#ch-1:checked~.content {
+    display: block;
+}
+
+#ch-1:checked~label {
+    display: none;
+}
+
+#ch-2 {
+    display: none;
+}
+
+#ch-2:checked~.content {
+    display: block;
+}
+
+#ch-2:checked~label {
+    display: none;
+}
+
+#ch-3 {
+    display: none;
+}
+
+#ch-3:checked~.content {
+    display: block;
+}
+
+#ch-3:checked~label {
+    display: none;
+}
+
+#ch-4 {
+    display: none;
+}
+
+#ch-4:checked~.content {
+    display: block;
+}
+
+#ch-4:checked~label {
+    display: none;
+}
+
+#ch-5 {
+    display: none;
+}
+
+#ch-5:checked~.content {
+    display: block;
+}
+
+#ch-5:checked~label {
+    display: none;
+}
+
+.content {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(120, 28, 28);
+    padding: 3px 13px;
+    border-radius: 3px;
+    margin-top: 12px;
+}
+
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.card video,
+.card audio {
+    width: 100%; /* Full width within card */
+    max-width: 900px; /* Limit maximum width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px auto; /* Center with margin */
+    display: block; /* Center element within card */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card video,
+    .card audio {
+        max-width: 100%; /* Take full width on mobile */
+    }
+}
+
+.copyright .row p a {
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    text-decoration: underline;
+    text-shadow: none !important;
+}
+
+footer {
+    padding: 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    text-align: center;
+}
+
+footer .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .row .col {
+    margin: 5px 0;
+}
+
+/* Responsive Footer for Mobile Screens */
+@media (max-width: 768px) {
+    footer .row {
+        flex-direction: column; /* Stack items vertically on mobile */
+        text-align: center; /* Center-align the text */
+    }
+
+    footer .row .col {
+        width: auto; /* Use automatic width for centered layout */
+    }
+}
+
